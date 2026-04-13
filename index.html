@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>데이터 엔지니어 포트폴리오 | Jaehwan Kang</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .brand { font-weight: 800; letter-spacing: 0.2px; }
+    .brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .hero-card, .card {
+      background: rgba(17, 24, 39, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 36px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(56, 189, 248, 0.18);
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.12;
+      margin: 16px 0 16px;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 22px;
+      font-size: 16px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      color: #08111f;
+      border: none;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+    }
+
+    .hero-side {
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .stat-label { color: var(--muted); font-size: 13px; }
+    .stat-value { font-size: 24px; font-weight: 800; margin-top: 4px; }
+
+    section { padding: 20px 0 12px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+    .section-head p { margin: 6px 0 0; color: var(--muted); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .card { padding: 24px; }
+    .chip-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.10);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      color: #c7f0fe;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .chip.green {
+      background: rgba(34, 197, 94, 0.10);
+      border-color: rgba(34, 197, 94, 0.18);
+      color: #d0f7dd;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+    .project-title {
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    ul.clean li { margin: 8px 0; }
+    .highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      border-left: 2px solid rgba(56, 189, 248, 0.35);
+      padding-left: 16px;
+    }
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .timeline-item p { margin: 0; color: var(--muted); }
+
+    .footer {
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+      .hero-card, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">Jaehwan Kang <span>Portfolio</span></div>
+      <div class="nav-links">
+        <a href="#about">소개</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#skills">기술</a>
+        <a href="#experience">경험</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div class="hero-card">
+        <div class="badge">Data Engineer 신입 지원</div>
+        <h1>데이터를 <span style="color: var(--accent);">정제</span>하고<br />활용 가능한 형태로 <span style="color: var(--accent2);">가공</span>하는 엔지니어</h1>
+        <p>
+          SQL과 Python을 기반으로 데이터를 수집·정제·가공하는 과정에 집중해왔습니다.
+          특히 비정형 데이터를 정형 데이터로 변환하고, 데이터 품질을 개선하는 작업에 강점을 가지고 있습니다.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
+          <a class="btn btn-secondary" href="#contact">연락처</a>
+        </div>
+      </div>
+
+      <div class="hero-card hero-side">
+        <div class="stat">
+          <div class="stat-label">학점</div>
+          <div class="stat-value">4.31 / 4.5</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">자격증</div>
+          <div class="stat-value">ADsP(데이터분석 준전문가)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">수상</div>
+          <div class="stat-value">LG전자 DX School 5기 BX 프로젝트 최우수상</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">핵심 역량</div>
+          <div class="stat-value">SQL · Python · 데이터 전처리</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <h2>소개</h2>
+          <p>데이터 엔지니어 직무에 맞춘 핵심 역량입니다.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>핵심 역량</h3>
+          <ul class="clean">
+            <li>SQL을 활용한 <span class="highlight">데이터 조회 및 집계</span> 수행</li>
+            <li>Python 기반 <span class="highlight">데이터 수집 및 전처리</span></li>
+            <li>비정형 데이터를 <span class="highlight">정형 데이터로 가공</span>한 경험</li>
+            <li>데이터 품질 개선을 위한 <span class="highlight">정제 로직 구현</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>직무 적합성</h3>
+          <p>
+            AI 활용을 위한 데이터 구축 과정에서 필요한 데이터 정제, 표준화, 가공 경험을 보유하고 있으며,
+            데이터 파이프라인의 기본 흐름을 이해하고 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div>
+          <h2>프로젝트</h2>
+          <p>데이터 처리 중심 경험</p>
+        </div>
+      </div>
+      <div class="project-list">
+        
+        <article class="card">
+          <h3 class="project-title">부동산 실거래가 데이터 파이프라인 구축</h3>
+          <div class="meta">개인 프로젝트 | <a href="https://github.com/pizzahobbang98/real-estate-transaction-pipeline" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">GitHub Repository</a></div>
+          <ul class="clean">
+            <li>Open API 등을 활용하여 전국 부동산 실거래가 <span class="highlight">데이터 수집 환경 구축</span></li>
+            <li>수집된 원시 데이터(Raw Data)의 결측치 처리, 타입 변환 등 <span class="highlight">ETL(추출·변환·적재) 프로세스 수행</span></li>
+            <li>Python을 활용해 데이터 수집부터 적재까지 이어지는 <span class="highlight">자동화된 데이터 파이프라인 설계 및 구현</span></li>
+          </ul>
+          
+          <div class="chip-wrap">
+            <div class="chip">Python</div>
+            <div class="chip">Data Pipeline</div>
+            <div class="chip">ETL</div>
+            <div class="chip">API</div>
+          </div>
+        </article>
+	<article class="card">
+          <h3 class="project-title">LG전자 DX School 5기 BX 프로젝트</h3>
+          <div class="meta">AI Styler Go </div>
+          <ul class="clean">
+            <li>블라인드에서 스타일러 키워드 관련 게시물, 댓글, 대댓글 포함 약 <span class="highlight">3,000건 크롤링</span></li>
+            <li>Selenium 기반 스크롤·탭 전환 방식으로 동적 페이지 데이터 수집</li>
+            <li>네이버 블로그·카페 데이터를 추가 수집해 여행 중 의류 관리 pain point와 needs 분석</li>
+            <li><span class="highlight">텍스트 빈도 분석, 워드클라우드</span>, 의도 기반 키워드 그룹화로 사용자 니즈 구조화</li>
+            <li>최종적으로 여행 상황 기반 휴대용 의류 케어 솔루션 AI Styler Go 컨셉 도출</li>
+          </ul>
+          
+          <div class="chip-wrap">
+            <div class="chip green">Selenium</div>
+            <div class="chip green">Web Crawling</div>
+            <div class="chip green">Text Analysis</div>
+            <div class="chip green">Wordcloud</div>
+            <div class="chip green">Data Visualization</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3 class="project-title">LG전자 DX School 5기 CX 프로젝트</h3>
+          <div class="meta">사용자 리뷰 데이터 기반 UX 개선 </div>
+          <ul class="clean">
+            <li>오늘의집 커뮤니티 데이터 <span class="highlight">약 40,000건 수집 및 전처리</span></li>
+            <li>결측치 제거, 불필요 컬럼 삭제, 광고성 게시글 필터링, 출처별 데이터 병합 수행</li>
+            <li>HTML 태그, URL, 특수문자, 이모지 제거 및 개인정보 마스킹 처리</li>
+            <li>유니코드 정규화, 공백 정규화, 맞춤형 불용어 사전 적용으로 <span class="highlight">텍스트 품질 개선</span></li>
+            <li><span class="highlight">TF-IDF, K-means, LDA 기반</span>으로 고객 맥락을 분석하고 개인화 UX 방향 도출</li>
+          </ul>
+          
+          <div class="chip-wrap">
+            <div class="chip">Python</div>
+            <div class="chip">Pandas</div>
+            <div class="chip">Web Crawling</div>
+            <div class="chip">Data Preprocessing</div>
+            <div class="chip">TF-IDF</div>
+            <div class="chip">K-means</div>
+            <div class="chip">LDA</div>
+          </div>
+        </article>
+
+        
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <div>
+          <h2>기술 스택</h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>SQL</h3>
+          <ul class="clean">
+            <li>JOIN, GROUP BY, 서브쿼리</li>
+            <li>윈도우 함수 활용</li>
+            <li>조건별 데이터 집계</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Python</h3>
+          <ul class="clean">
+            <li>pandas 기반 데이터 처리</li>
+            <li>requests / 크롤링</li>
+            <li>데이터 전처리 및 정제</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div>
+          <h2>경험</h2>
+        </div>
+      </div>
+      <div class="card timeline">
+        <div class="timeline-item">
+          <h3>LG전자 DX School 5기</h3>
+          <p>데이터 분석 및 AI 교육 과정 이수 중</p>
+        </div>
+        <div class="timeline-item">
+          <h3>대진대학교 IT기계공학과</h3>
+          <p>GPA 4.31 / 4.5</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h2>연락처</h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <ul class="clean">
+            <li>이메일: <a href="mailto:kwoghks98@gmail.com" style="color: var(--accent); text-decoration: underline;">kwoghks98@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/pizzahobbang98" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">github.com/pizzahobbang98</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    © 2026 Portfolio
+  </footer>
+</body>
+</html>
