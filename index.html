@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>데이터 엔지니어 포트폴리오 | Jaehwan Kang</title>
+  <title>AI Agent / Data Portfolio | Jaehwan Kang</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -15,7 +15,7 @@
       --accent2: #22c55e;
       --border: rgba(148, 163, 184, 0.18);
       --shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-      --max: 1080px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
@@ -25,7 +25,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
       background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -54,14 +54,12 @@
       font-size: 14px;
     }
 
-    .hero {
-      padding: 72px 0 44px;
-    }
+    .hero { padding: 72px 0 44px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.45fr 1fr;
       gap: 24px;
-      align-items: center;
+      align-items: stretch;
     }
     .hero-card, .card {
       background: rgba(17, 24, 39, 0.72);
@@ -97,7 +95,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
     .btn {
       display: inline-flex;
@@ -132,9 +130,9 @@
       padding: 18px;
     }
     .stat-label { color: var(--muted); font-size: 13px; }
-    .stat-value { font-size: 24px; font-weight: 800; margin-top: 4px; }
+    .stat-value { font-size: 22px; font-weight: 800; margin-top: 4px; }
 
-    section { padding: 20px 0 12px; }
+    section { padding: 22px 0 12px; }
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -159,7 +157,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 16px;
     }
     .chip {
       padding: 8px 12px;
@@ -175,43 +173,47 @@
       border-color: rgba(34, 197, 94, 0.18);
       color: #d0f7dd;
     }
+    .chip.purple {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: rgba(168, 85, 247, 0.18);
+      color: #ead8ff;
+    }
 
-    .project-list {
-      display: grid;
-      gap: 18px;
-    }
-    .project-title {
-      font-size: 22px;
-      margin: 0 0 8px;
-    }
-    .meta {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-    ul.clean {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--text);
-    }
+    .project-list { display: grid; gap: 18px; }
+    .project-title { font-size: 22px; margin: 0 0 8px; }
+    .meta { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+    ul.clean { margin: 0; padding-left: 18px; color: var(--text); }
     ul.clean li { margin: 8px 0; }
-    .highlight {
+    .highlight { color: var(--accent); font-weight: 700; }
+
+    .project-block {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .subbox {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+    .subbox h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
       color: var(--accent);
-      font-weight: 700;
+    }
+    .subbox p, .subbox ul {
+      margin: 0;
+      color: var(--text);
+      font-size: 15px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
+    .timeline { display: grid; gap: 16px; }
     .timeline-item {
       border-left: 2px solid rgba(56, 189, 248, 0.35);
       padding-left: 16px;
     }
-    .timeline-item h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
+    .timeline-item h3 { margin: 0 0 6px; font-size: 18px; }
     .timeline-item p { margin: 0; color: var(--muted); }
 
     .footer {
@@ -246,11 +248,12 @@
   <header class="hero wrap">
     <div class="hero-grid">
       <div class="hero-card">
-        <div class="badge">Data Engineer 신입 지원</div>
-        <h1>데이터를 <span style="color: var(--accent);">정제</span>하고<br />활용 가능한 형태로 <span style="color: var(--accent2);">가공</span>하는 엔지니어</h1>
+        <div class="badge">AI Agent / Data 직무 지원</div>
+        <h1>문제를 <span style="color: var(--accent);">데이터로 구조화</span>하고<br />해결 방식을 <span style="color: var(--accent2);">시스템으로 구현</span>하는 지원자</h1>
         <p>
-          SQL과 Python을 기반으로 데이터를 수집·정제·가공하는 과정에 집중해왔습니다.
-          특히 비정형 데이터를 정형 데이터로 변환하고, 데이터 품질을 개선하는 작업에 강점을 가지고 있습니다.
+          단순히 데이터를 수집하거나 정리하는 데서 끝나지 않고, 사용자가 겪는 불편을 어떤 데이터로 설명할 수 있는지,
+          그 문제를 해결하기 위해 어떤 처리 방식과 분석 방법이 적절한지까지 고민해왔습니다.
+          최근에는 데이터 파이프라인 경험을 바탕으로 AI Agent, LLM 활용 서비스로 확장 가능한 구조에 관심을 두고 있습니다.
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
@@ -265,15 +268,15 @@
         </div>
         <div class="stat">
           <div class="stat-label">자격증</div>
-          <div class="stat-value">ADsP(데이터분석 준전문가)</div>
+          <div class="stat-value">ADsP (데이터분석 준전문가)</div>
         </div>
         <div class="stat">
           <div class="stat-label">수상</div>
           <div class="stat-value">LG전자 DX School 5기 BX 프로젝트 최우수상</div>
         </div>
         <div class="stat">
-          <div class="stat-label">핵심 역량</div>
-          <div class="stat-value">SQL · Python · 데이터 전처리</div>
+          <div class="stat-label">핵심 키워드</div>
+          <div class="stat-value">Python · SQL · 전처리 · 텍스트 분석</div>
         </div>
       </div>
     </div>
@@ -284,24 +287,25 @@
       <div class="section-head">
         <div>
           <h2>소개</h2>
-          <p>데이터 엔지니어 직무에 맞춘 핵심 역량입니다.</p>
+          <p>문제 정의부터 개선 방향까지 연결하는 방식으로 프로젝트를 수행했습니다.</p>
         </div>
       </div>
       <div class="grid-2">
         <div class="card">
           <h3>핵심 역량</h3>
           <ul class="clean">
-            <li>SQL을 활용한 <span class="highlight">데이터 조회 및 집계</span> 수행</li>
-            <li>Python 기반 <span class="highlight">데이터 수집 및 전처리</span></li>
-            <li>비정형 데이터를 <span class="highlight">정형 데이터로 가공</span>한 경험</li>
-            <li>데이터 품질 개선을 위한 <span class="highlight">정제 로직 구현</span></li>
+            <li>SQL과 Python을 활용한 <span class="highlight">데이터 수집, 정제, 적재 자동화</span></li>
+            <li>비정형 텍스트를 분석 가능한 형태로 바꾸는 <span class="highlight">전처리 및 품질 개선</span></li>
+            <li>문제 상황에 맞춰 TF-IDF, K-means, LDA 등 <span class="highlight">적절한 분석 기법 선택</span></li>
+            <li>데이터 파이프라인 경험을 기반으로 <span class="highlight">AI Agent 확장 가능성 제안</span></li>
           </ul>
         </div>
         <div class="card">
-          <h3>직무 적합성</h3>
+          <h3>지원 직무와의 연결</h3>
           <p>
-            AI 활용을 위한 데이터 구축 과정에서 필요한 데이터 정제, 표준화, 가공 경험을 보유하고 있으며,
-            데이터 파이프라인의 기본 흐름을 이해하고 있습니다.
+            AI Agent는 결국 사용자의 요청을 이해하고, 필요한 데이터를 찾고, 가공하고, 적절한 결과를 반환하는 구조라고 생각합니다.
+            저는 데이터 수집과 정제, 텍스트 구조화, 분석 흐름 설계를 경험하며 "좋은 AI 서비스는 좋은 데이터 처리에서 시작된다"는 점을 배웠고,
+            이를 기반으로 AI Agent 실무형 개발자로 성장하고자 합니다.
           </p>
         </div>
       </div>
@@ -311,69 +315,151 @@
       <div class="section-head">
         <div>
           <h2>프로젝트</h2>
-          <p>데이터 처리 중심 경험</p>
+          <p>무엇을 만들었는지보다, 어떤 문제를 해결하려 했는지 중심으로 정리했습니다.</p>
         </div>
       </div>
       <div class="project-list">
-        
+
         <article class="card">
           <h3 class="project-title">부동산 실거래가 데이터 파이프라인 구축</h3>
           <div class="meta">개인 프로젝트 | <a href="https://github.com/pizzahobbang98/real-estate-transaction-pipeline" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">GitHub Repository</a></div>
-          <ul class="clean">
-            <li>Open API 등을 활용하여 전국 부동산 실거래가 <span class="highlight">데이터 수집 환경 구축</span></li>
-            <li>수집된 원시 데이터(Raw Data)의 결측치 처리, 타입 변환 등 <span class="highlight">ETL(추출·변환·적재) 프로세스 수행</span></li>
-            <li>Python을 활용해 데이터 수집부터 적재까지 이어지는 <span class="highlight">자동화된 데이터 파이프라인 설계 및 구현</span></li>
-          </ul>
-          
+
+          <div class="project-block">
+            <div class="subbox">
+              <h4>문제 정의</h4>
+              <p>
+                공공 부동산 실거래가 데이터는 조회 자체는 가능하지만, 누적 저장과 정제 구조가 없으면 장기 추이 분석이나 재사용이 어렵습니다.
+                단발성 조회 중심 구조를 반복 가능한 데이터 자산 형태로 바꾸는 것이 목표였습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>해결 방식</h4>
+              <ul class="clean">
+                <li>Open API 기반 수집 로직을 작성해 <span class="highlight">반복 가능한 수집 환경</span> 구축</li>
+                <li>결측치 처리, 타입 변환, 컬럼 정리를 통해 <span class="highlight">Raw Data를 분석 가능한 형태로 정제</span></li>
+                <li>Python 중심으로 수집부터 적재까지 이어지는 <span class="highlight">ETL 파이프라인 자동화</span> 구현</li>
+              </ul>
+            </div>
+            <div class="subbox">
+              <h4>왜 이 방법을 선택했는가</h4>
+              <p>
+                이 프로젝트의 핵심은 복잡한 모델보다도, 데이터를 안정적으로 다시 쓸 수 있는 구조를 만드는 것이었습니다.
+                그래서 빠르게 검증 가능하고 유지보수가 쉬운 Python 기반 파이프라인 형태를 선택했습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>향후 개선 방향</h4>
+              <p>
+                현재는 배치성 수집과 정제 중심이므로, 이후에는 지역별 가격 변동을 질의하는 <span class="highlight">자연어 기반 질의 시스템</span>이나,
+                뉴스·금리 데이터를 함께 연결한 <span class="highlight">부동산 시장 분석 Agent</span>로 확장할 수 있다고 생각합니다.
+              </p>
+            </div>
+          </div>
+
           <div class="chip-wrap">
             <div class="chip">Python</div>
             <div class="chip">Data Pipeline</div>
             <div class="chip">ETL</div>
             <div class="chip">API</div>
+            <div class="chip purple">AI Agent 확장 가능</div>
           </div>
         </article>
-	<article class="card">
+
+        <article class="card">
           <h3 class="project-title">LG전자 DX School 5기 BX 프로젝트</h3>
-          <div class="meta">AI Styler Go </div>
-          <ul class="clean">
-            <li>블라인드에서 스타일러 키워드 관련 게시물, 댓글, 대댓글 포함 약 <span class="highlight">3,000건 크롤링</span></li>
-            <li>Selenium 기반 스크롤·탭 전환 방식으로 동적 페이지 데이터 수집</li>
-            <li>네이버 블로그·카페 데이터를 추가 수집해 여행 중 의류 관리 pain point와 needs 분석</li>
-            <li><span class="highlight">텍스트 빈도 분석, 워드클라우드</span>, 의도 기반 키워드 그룹화로 사용자 니즈 구조화</li>
-            <li>최종적으로 여행 상황 기반 휴대용 의류 케어 솔루션 AI Styler Go 컨셉 도출</li>
-          </ul>
-          
+          <div class="meta">AI Styler Go | 최우수상 수상</div>
+
+          <div class="project-block">
+            <div class="subbox">
+              <h4>문제 정의</h4>
+              <p>
+                여행 중 옷 관리 불편은 분명 존재하지만, 이를 어떤 상황에서 얼마나 자주 느끼는지 정리된 데이터는 부족했습니다.
+                사용자의 실제 불편을 추정이 아닌 텍스트 데이터 기반으로 구조화하는 것이 필요했습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>해결 방식</h4>
+              <ul class="clean">
+                <li>블라인드 게시물·댓글·대댓글 포함 약 <span class="highlight">3,000건 크롤링</span></li>
+                <li>Selenium 기반 스크롤·탭 전환으로 <span class="highlight">동적 페이지 데이터 수집</span></li>
+                <li>네이버 블로그·카페 데이터를 추가 수집해 pain point와 needs를 보강</li>
+                <li>텍스트 빈도 분석, 워드클라우드, 의도 기반 키워드 그룹화로 <span class="highlight">사용자 니즈 구조화</span></li>
+              </ul>
+            </div>
+            <div class="subbox">
+              <h4>왜 이 방법을 선택했는가</h4>
+              <p>
+                초기에는 설문 기반 접근도 가능했지만, 실제 사용자의 언어와 표현을 더 풍부하게 확보하기 위해 공개 커뮤니티 텍스트를 선택했습니다.
+                특히 다양한 상황 맥락을 얻기 위해 단순 리뷰보다 게시글·댓글 구조가 적합하다고 판단했습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>성과와 개선 방향</h4>
+              <p>
+                데이터 기반으로 여행 상황의 의류 관리 니즈를 정리해 휴대용 의류 케어 솔루션 "AI Styler Go" 컨셉을 도출했고,
+                프로젝트 최우수상을 수상했습니다. 이후에는 키워드 분석을 넘어서 <span class="highlight">감성 분석, 문맥 분류, 요약 Agent</span>를 적용해
+                VOC를 자동 분류하고 제품 기획 인사이트를 실시간으로 제공하는 방향으로 발전시킬 수 있습니다.
+              </p>
+            </div>
+          </div>
+
           <div class="chip-wrap">
             <div class="chip green">Selenium</div>
             <div class="chip green">Web Crawling</div>
             <div class="chip green">Text Analysis</div>
             <div class="chip green">Wordcloud</div>
-            <div class="chip green">Data Visualization</div>
+            <div class="chip purple">VOC Agent 아이디어</div>
           </div>
         </article>
+
         <article class="card">
           <h3 class="project-title">LG전자 DX School 5기 CX 프로젝트</h3>
-          <div class="meta">사용자 리뷰 데이터 기반 UX 개선 </div>
-          <ul class="clean">
-            <li>오늘의집 커뮤니티 데이터 <span class="highlight">약 40,000건 수집 및 전처리</span></li>
-            <li>결측치 제거, 불필요 컬럼 삭제, 광고성 게시글 필터링, 출처별 데이터 병합 수행</li>
-            <li>HTML 태그, URL, 특수문자, 이모지 제거 및 개인정보 마스킹 처리</li>
-            <li>유니코드 정규화, 공백 정규화, 맞춤형 불용어 사전 적용으로 <span class="highlight">텍스트 품질 개선</span></li>
-            <li><span class="highlight">TF-IDF, K-means, LDA 기반</span>으로 고객 맥락을 분석하고 개인화 UX 방향 도출</li>
-          </ul>
-          
+          <div class="meta">사용자 리뷰 데이터 기반 UX 개선</div>
+
+          <div class="project-block">
+            <div class="subbox">
+              <h4>문제 정의</h4>
+              <p>
+                사용자 리뷰는 많지만 그대로는 잡음이 많아 인사이트로 바로 활용하기 어렵습니다.
+                특히 광고성 문구, HTML 태그, 이모지, URL, 중복 표현이 섞여 있어 고객 맥락을 정확히 파악하기 어렵다는 문제가 있었습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>해결 방식</h4>
+              <ul class="clean">
+                <li>오늘의집 커뮤니티 데이터 약 <span class="highlight">40,000건 수집 및 전처리</span></li>
+                <li>결측치 제거, 불필요 컬럼 삭제, 광고성 게시글 필터링, 출처별 병합 수행</li>
+                <li>HTML 태그, URL, 특수문자, 이모지 제거 및 개인정보 마스킹 처리</li>
+                <li>유니코드·공백 정규화와 맞춤형 불용어 사전 적용으로 <span class="highlight">텍스트 품질 개선</span></li>
+                <li>TF-IDF, K-means, LDA 기반으로 고객 맥락을 분석하고 <span class="highlight">개인화 UX 방향 도출</span></li>
+              </ul>
+            </div>
+            <div class="subbox">
+              <h4>왜 이 방법을 선택했는가</h4>
+              <p>
+                리뷰 데이터는 모델 성능보다 전처리 품질이 결과를 크게 좌우한다고 판단했습니다.
+                그래서 먼저 데이터 품질을 높인 뒤, 해석 가능한 방식으로 주제를 묶고 맥락을 찾는 분석 흐름을 구성했습니다.
+              </p>
+            </div>
+            <div class="subbox">
+              <h4>향후 개선 방향</h4>
+              <p>
+                향후에는 군집과 토픽 모델링 결과를 LLM과 결합해, 사용자의 후기 입력 시 자동으로 불편 유형을 분류하고,
+                적절한 UX 개선 가이드를 제안하는 <span class="highlight">리뷰 해석 Assistant</span> 형태로 확장하고 싶습니다.
+              </p>
+            </div>
+          </div>
+
           <div class="chip-wrap">
             <div class="chip">Python</div>
             <div class="chip">Pandas</div>
-            <div class="chip">Web Crawling</div>
             <div class="chip">Data Preprocessing</div>
             <div class="chip">TF-IDF</div>
             <div class="chip">K-means</div>
             <div class="chip">LDA</div>
+            <div class="chip purple">LLM 기반 분류 확장</div>
           </div>
         </article>
-
-        
       </div>
     </section>
 
@@ -381,23 +467,25 @@
       <div class="section-head">
         <div>
           <h2>기술 스택</h2>
+          <p>실제로 프로젝트에서 사용해 본 기술 중심으로 정리했습니다.</p>
         </div>
       </div>
       <div class="grid-2">
         <div class="card">
-          <h3>SQL</h3>
+          <h3>SQL / Data Handling</h3>
           <ul class="clean">
-            <li>JOIN, GROUP BY, 서브쿼리</li>
-            <li>윈도우 함수 활용</li>
-            <li>조건별 데이터 집계</li>
+            <li>JOIN, GROUP BY, 서브쿼리, 윈도우 함수</li>
+            <li>조건별 집계 및 분석용 쿼리 작성</li>
+            <li>정형 데이터 구조 이해 및 전처리 로직 설계</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Python</h3>
+          <h3>Python / AI 확장 기반</h3>
           <ul class="clean">
-            <li>pandas 기반 데이터 처리</li>
-            <li>requests / 크롤링</li>
-            <li>데이터 전처리 및 정제</li>
+            <li>pandas 기반 데이터 처리 및 정제</li>
+            <li>requests, Selenium 기반 수집 자동화</li>
+            <li>텍스트 전처리, 군집화, 토픽 모델링</li>
+            <li>향후 Tool 호출형 AI Agent 구현에 필요한 데이터 흐름 이해</li>
           </ul>
         </div>
       </div>
@@ -412,7 +500,7 @@
       <div class="card timeline">
         <div class="timeline-item">
           <h3>LG전자 DX School 5기</h3>
-          <p>데이터 분석 및 AI 교육 과정 이수 중</p>
+          <p>데이터 분석 및 AI 교육 과정 이수, BX 프로젝트 최우수상 수상</p>
         </div>
         <div class="timeline-item">
           <h3>대진대학교 IT기계공학과</h3>
@@ -432,14 +520,22 @@
           <ul class="clean">
             <li>이메일: <a href="mailto:kwoghks98@gmail.com" style="color: var(--accent); text-decoration: underline;">kwoghks98@gmail.com</a></li>
             <li>GitHub: <a href="https://github.com/pizzahobbang98" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">github.com/pizzahobbang98</a></li>
+            <li>Portfolio: <a href="https://pizzahobbang98.github.io/data-engineer-portfolio/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">기존 배포 페이지</a></li>
           </ul>
+        </div>
+        <div class="card">
+          <h3>한 줄 메시지</h3>
+          <p>
+            데이터를 정리하는 사람을 넘어, 데이터를 바탕으로 문제를 정의하고
+            AI 서비스로 연결할 수 있는 개발자로 성장하겠습니다.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer wrap">
-    © 2026 Portfolio
+    © 2026 Jaehwan Kang Portfolio
   </footer>
 </body>
 </html>
